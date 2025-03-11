@@ -588,3 +588,38 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
 }
+
+/* Fix for the time slider animation */
+.simulation-controls {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: rgba(0, 121, 56, 0.05);
+  border-radius: 12px;
+  /* Remove the animation and use a simple transition instead */
+  transition: opacity 0.3s ease;
+  opacity: 1;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Ensure the container doesn't expand beyond its parent */
+.time-display {
+  /* Keep existing styles and add: */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Make sure the slider stays within bounds */
+.time-slider {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure the markers stay within bounds */
+.hour-markers {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+}
