@@ -623,3 +623,24 @@ body {
   box-sizing: border-box;
   padding: 0;
 }
+
+@media screen and (max-width: 480px) {
+  .simulation-controls {
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .hour-markers {
+    font-size: 10px; /* Smaller font on mobile */
+  }
+  
+  .time-slider::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .time-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+  }
+}
