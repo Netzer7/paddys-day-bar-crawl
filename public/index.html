@@ -40,28 +40,7 @@
         padding: 10px 8px;
       }
     }
-    
-    /* Add to home screen prompt */
-    .add-to-home {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #006400;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      font-size: 14px;
-      z-index: 100;
-      display: none;
-    }
-    
-    .add-to-home.visible {
-      display: block;
-      animation: fadeIn 0.5s ease;
-    }
-    
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translate(-50%, 20px); }
       to { opacity: 1; transform: translate(-50%, 0); }
@@ -70,26 +49,6 @@
 </head>
 <body>
   <div id="root"></div>
-  <div class="add-to-home" id="addToHome">Add to home screen for easy access during your bar crawl! 📱</div>
-  
   <script type="module" src="index.js"></script>
-  <script>
-    // Check if the user is on a mobile device and show add to home prompt
-    if (('standalone' in navigator && !navigator.standalone) || 
-        (window.matchMedia('(display-mode: browser)').matches && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent))) {
-      // Show the prompt after a delay
-      setTimeout(() => {
-        const addToHome = document.getElementById('addToHome');
-        if (addToHome) {
-          addToHome.classList.add('visible');
-          
-          // Hide it after 10 seconds
-          setTimeout(() => {
-            addToHome.classList.remove('visible');
-          }, 10000);
-        }
-      }, 3000);
-    }
-  </script>
 </body>
 </html>
